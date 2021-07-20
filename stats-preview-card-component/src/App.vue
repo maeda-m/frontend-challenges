@@ -1,23 +1,22 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld/>
+      <StatusCard/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import StatusCard from './components/StatusCard.vue'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    StatusCard,
   },
 
-  data: () => ({
-    //
-  }),
+  data() {
+  },
 }
 </script>

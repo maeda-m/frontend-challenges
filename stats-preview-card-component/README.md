@@ -63,6 +63,9 @@ npm run lint
 - Material Design Framework
   - https://cli.vuejs.org/#getting-started
   - https://next.vuetifyjs.com/en/getting-started/installation/#vite
+  - https://vuetifyjs.com/ja/styles/display/
+  - https://material.io/design/color/dark-theme.html#ui-application
+  - https://github.com/vuetifyjs/vuetify/blob/v3.0.0-alpha.9/packages/vuetify/src/styles/settings/_dark.scss
 - Git commit
   - [Configuring Git to handle line endings](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings)
   - [parmentf/GitCommitEmoji.md](https://gist.github.com/parmentf/035de27d6ed1dce0b36a)
