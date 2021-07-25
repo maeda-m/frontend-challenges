@@ -1,77 +1,56 @@
 <template>
-  <v-container>
-    <v-row class="d-lg-none d-flex">
-      <v-col cols="12">
-        <v-img
-          :src="headers.mobile"
-        />
-      </v-col>
-    </v-row>
-    <v-row class="d-lg-none d-flex">
-      <v-col cols="12">
-        <h2>{{ title }}</h2>
-      </v-col>
-      <v-col cols="12">
-        {{ description }}
-      </v-col>
+  <v-container class="status-card">
+    <v-row>
+      <v-img
+        v-if="isMobile"
+        :src="headers.mobile"
+      />
 
-      <v-col cols="4"
-        v-for="(attr, i) in attributes"
-        :key="i"
-      >
-        {{ attr.text }}
-      </v-col>
-      <v-col cols="4"
-        v-for="(attr, i) in attributes"
-        :key="i"
-      >
-        {{ attr.name }}
-      </v-col>
-    </v-row>
-    <v-row class="d-none d-lg-flex">
-      <v-col cols="6">
+      <div v-bind:class="{ 'v-col v-col-6': !isMobile }">
         <v-col cols="12">
-          <h2>{{ title }}</h2>
+          <h2>Get <span class="insights">insights</span> that help your business grow.</h2>
         </v-col>
-        <v-col cols="12">
-          {{ description }}
+
+        <v-col cols="12" class="description font-lexend-deca">
+          Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.
         </v-col>
 
         <v-row>
-          <v-col cols="4"
+          <status-attribute
+            v-bind:class="{ 'v-col v-col-12': isMobile }"
             v-for="(attr, i) in attributes"
-            :key="i"
-          >
-            {{ attr.text }}
-          </v-col>
-          <v-col cols="4"
-            v-for="(attr, i) in attributes"
-            :key="i"
-          >
-            {{ attr.name }}
-          </v-col>
+            v-bind:key="i"
+            v-bind="attr"
+          ></status-attribute>
         </v-row>
-      </v-col>
-      <v-col cols="6">
+      </div>
+
+      <v-col cols="6" v-if="!isMobile">
         <v-img
           :src="headers.desktop"
         />
       </v-col>
     </v-row>
+
   </v-container>
 </template>
 
 <script>
+import { useDisplay } from 'vuetify/lib/composables/display'
 import header_desktop from '../assets/header-desktop.jpg'
 import header_mobile from '../assets/header-mobile.jpg'
+
+import StatusAttribute from './StatusAttribute.vue'
 
 export default {
   name: 'StatusCard',
 
+  components: {
+    StatusAttribute,
+  },
+
   data() {
     return {
-      title: 'Get insights that help your business grow.',
-      description: 'Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.',
       attributes: [
         {
           name: 'COMPANIES',
@@ -92,5 +71,25 @@ export default {
       }
     }
   },
+
+  computed: {
+    isMobile() {
+      const { width } = useDisplay();
+      return width.value <= 375;
+    },
+  },
 }
 </script>
+
+<style lang="scss">
+.status-card {
+  background-color: hsl(244, 38%, 16%);
+
+  .insights {
+    color: hsl(277, 64%, 61%);
+  }
+  .description {
+    color: hsla(0, 0%, 100%, 0.75);
+  }
+}
+</style>
