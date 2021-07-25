@@ -70,6 +70,10 @@ npm run lint
   - https://next.vuetifyjs.com/ja/features/theme/#setup
   - https://v3.ja.vuejs.org/guide/class-and-style.html#class-and-style-bindings
   - https://developers.google.com/fonts/docs/getting_started
+  - https://developer.mozilla.org/ja/docs/Web/CSS/background-image
+    - url で画像を直接指定したが、画像の幅高さの調整ができなくて諦めた
+  - https://developer.mozilla.org/ja/docs/Web/CSS/filter
+    - そもそもモノクロの画像なのでトーンが調整できなかったので諦めた
 - Git commit
   - [Configuring Git to handle line endings](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings)
   - [parmentf/GitCommitEmoji.md](https://gist.github.com/parmentf/035de27d6ed1dce0b36a)
