@@ -1,12 +1,12 @@
 <template>
   <v-container class="status-card">
-    <v-row>
+    <v-row v-bind:class="{ 'mx-1 text-center': isMobile }">
       <v-img
         v-if="isMobile"
-        :src="headers.mobile"
+        v-bind:src="headers.mobile"
       />
 
-      <div v-bind:class="{ 'v-col v-col-6': !isMobile }">
+      <div v-bind:class="{ 'v-col v-col-6 px-16': !isMobile }">
         <v-col cols="12">
           <h2>Get <span class="insights">insights</span> that help your business grow.</h2>
         </v-col>
@@ -15,7 +15,7 @@
           Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.
         </v-col>
 
-        <v-row>
+        <v-row v-bind:class="{ 'pt-16': !isMobile }">
           <status-attribute
             v-bind:class="{ 'v-col v-col-12': isMobile }"
             v-for="(attr, i) in attributes"
@@ -27,7 +27,7 @@
 
       <v-col cols="6" v-if="!isMobile">
         <v-img
-          :src="headers.desktop"
+          v-bind:src="headers.desktop"
         />
       </v-col>
     </v-row>

@@ -1,7 +1,7 @@
 <template>
-  <div class="status-attribute">
+  <div class="status-attribute mx-auto">
     <v-col><h3>{{text}}</h3></v-col>
-    <v-col><label class="font-lexend-deca">{{name}}</label></v-col>
+    <v-col class="mt-n5"><small class="font-lexend-deca">{{name}}</small></v-col>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss">
 .status-attribute {
-  label {
+  small {
     color: hsla(0, 0%, 100%, 0.6);
   }
 }
