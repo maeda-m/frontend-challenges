@@ -3,6 +3,15 @@
     <v-main>
       <StatusCard/>
     </v-main>
+    <v-footer padless>
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/maeda-m">@maeda-m</a>.
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
@@ -38,5 +47,14 @@ html {
   font-size: 15px;
   background-color: hsl(233, 47%, 7%);
   color: hsl(0, 0%, 100%);
+}
+
+footer {
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
 }
 </style>
