@@ -40,7 +40,7 @@ npm run lint
 ### Built with
 
 - Vue3 + Vite
-  - with ESLint
+  - without ESLint
   - without TypeScript
   - without JavaScript Test
 - Material Design Framework
@@ -56,7 +56,9 @@ npm run lint
 
 ### Useful resources
 
-- TODO
+- https://next.vuetifyjs.com/ja/components/cards/
+- https://next.vuetifyjs.com/ja/components/app-bars/
+- https://next.vuetifyjs.com/ja/components/avatars/
 
 ## Author
 
