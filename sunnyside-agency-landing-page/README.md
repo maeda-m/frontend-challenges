@@ -48,7 +48,9 @@ npm run lint
 
 ### What I learned(in Japanese)
 
-- TODO
+- Material Design ブレークポイントを style-guide.md の内容に変更しようとしたが諦めた
+  - `createVuetify` にて `display.thresholds` を渡して JS は変更された
+  - `plugin/vuetify.js` にて1行目に `$grid-breakpoints` を上書きする scss を import したが CSS は変更されなかった
 
 ### Continued development
 
@@ -56,6 +58,7 @@ npm run lint
 
 ### Useful resources
 
+- https://www.atlassian.com/ja/git/tutorials/merging-vs-rebasing
 - https://next.vuetifyjs.com/ja/components/cards/
 - https://next.vuetifyjs.com/ja/components/app-bars/
 - https://next.vuetifyjs.com/ja/components/avatars/

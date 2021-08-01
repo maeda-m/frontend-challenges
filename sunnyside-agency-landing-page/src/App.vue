@@ -23,26 +23,26 @@
       </v-card>
 
       <v-row no-gutters>
-        <v-col cols="6">
+        <v-col sm="6" cols="12" class="order-sm-last">
+          <v-img
+            src="./images/desktop/image-transform.jpg"
+          ></v-img>
+        </v-col>
+        <v-col sm="6" cols="12" class="order-sm-first">
           <h2>Transform your brand</h2>
           <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
 
           <a href="#">LEARN MORE</a>
         </v-col>
-        <v-col cols="6">
-          <v-img
-            src="./images/desktop/image-transform.jpg"
-          ></v-img>
-        </v-col>
       </v-row>
 
       <v-row no-gutters>
-        <v-col cols="6">
+        <v-col sm="6" cols="12">
           <v-img
             src="./images/desktop/image-stand-out.jpg"
           ></v-img>
         </v-col>
-        <v-col cols="6">
+        <v-col sm="6" cols="12">
           <h2>Stand out to the right audience</h2>
           <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we'll build and extend your brand in digital places.</p>
 
@@ -51,7 +51,7 @@
       </v-row>
 
       <v-row no-gutters>
-        <v-col cols="6">
+        <v-col sm="6" cols="12">
           <v-card>
             <v-img
               src="./images/desktop/image-graphic-design.jpg"
@@ -61,7 +61,7 @@
             </v-img>
           </v-card>
         </v-col>
-        <v-col cols="6">
+        <v-col sm="6" cols="12">
           <v-card>
             <v-img
               src="./images/desktop/image-photography.jpg"
@@ -78,7 +78,7 @@
           <h2>CLIENT TESTIMONIALS</h2>
         </v-col>
 
-        <v-col cols="4">
+        <v-col sm="4" cols="12">
           <v-avatar
             size="64px"
           >
@@ -93,7 +93,7 @@
           <p><small>Marketing Director</small></p>
         </v-col>
 
-        <v-col cols="4">
+        <v-col sm="4" cols="12">
           <v-avatar
             size="64px"
           >
@@ -108,7 +108,7 @@
           <p><small>Chief Operating Officer</small></p>
         </v-col>
 
-        <v-col cols="4">
+        <v-col sm="4" cols="12">
           <v-avatar
             size="64px"
           >
@@ -124,19 +124,27 @@
         </v-col>
       </v-row>
 
-      <v-row>
-        <v-img
-          src="./images/desktop/image-gallery-milkbottles.jpg"
-        ></v-img>
-        <v-img
-          src="./images/desktop/image-gallery-orange.jpg"
-        ></v-img>
-        <v-img
-          src="./images/desktop/image-gallery-cone.jpg"
-        ></v-img>
-        <v-img
-          src="./images/desktop/image-gallery-sugarcubes.jpg"
-        ></v-img>
+      <v-row no-gutters>
+        <v-col sm="3" cols="6">
+          <v-img
+            src="./images/desktop/image-gallery-milkbottles.jpg"
+          ></v-img>
+        </v-col>
+        <v-col sm="3" cols="6">
+          <v-img
+            src="./images/desktop/image-gallery-orange.jpg"
+          ></v-img>
+        </v-col>
+        <v-col sm="3" cols="6">
+          <v-img
+            src="./images/desktop/image-gallery-cone.jpg"
+          ></v-img>
+        </v-col>
+        <v-col sm="3" cols="6">
+          <v-img
+            src="./images/desktop/image-gallery-sugarcubes.jpg"
+          ></v-img>
+        </v-col>
       </v-row>
 
       <v-row class="text-center bg-teal-lighten-4">
