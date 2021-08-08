@@ -101,7 +101,7 @@
               <v-col class="d-flex h-100 justify-center align-end text-center">
                 <v-col cols="7" class="graphic-design-text">
                   <h3>Graphic Design</h3>
-                  <p>Grate design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients' attention.</p>
+                  <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients' attention.</p>
                 </v-col>
               </v-col>
             </v-img>
@@ -137,7 +137,7 @@
             >
             </v-img>
           </v-avatar>
-          <p>We put our trust in Sunnyside and they delivered, marking sure our needs where met and deadlines were always hit.</p>
+          <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
 
           <strong>Emily R.</strong>
           <small>Marketing Director</small>
@@ -167,7 +167,7 @@
             >
             </v-img>
           </v-avatar>
-          <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside Highly recommended!</p>
+          <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
 
           <strong>Jennie F.</strong>
           <small>Business Owner</small>
