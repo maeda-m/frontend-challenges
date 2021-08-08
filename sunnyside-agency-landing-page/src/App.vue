@@ -3,7 +3,7 @@
     <v-main>
       <v-card class="text-white">
         <v-img
-          src="./images/desktop/image-header.jpg"
+          v-bind:src="`./images/${viewMode}/image-header.jpg`"
         >
           <v-toolbar>
             <v-card-title class="blue white--text ml-4 mr-0 mb-16">
@@ -14,19 +14,14 @@
                 bottom
                 left
               >
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn
-                    icon
-                    v-bind="attrs"
-                    v-on="on"
-                  >
-                    <v-icon>mdi-dots-vertical</v-icon>
-                  </v-btn>
-                </template>
-
                 <v-list>
-                  <v-list-item>
+                  <v-list-item v-bind:class="viewMode" class="hamburger-menu">
+                    <button><IconHamburger v-on:click="this.menu = !this.menu" /></button>
+                  </v-list-item>
+                  <v-list-item v-bind:class="viewMode" class="actions-menu">
+                    <v-list-item-content>
                     <v-list-item-title><button>About</button></v-list-item-title>
+                    </v-list-item-content>
                     <v-list-item-title><button>Services</button></v-list-item-title>
                     <v-list-item-title><button>Projects</button></v-list-item-title>
                     <v-list-item-title class="contact">
@@ -56,7 +51,7 @@
       <v-row no-gutters>
         <v-col sm="6" cols="12" class="order-sm-last">
           <v-img
-            src="./images/desktop/image-transform.jpg"
+            v-bind:src="`./images/${viewMode}/image-transform.jpg`"
           ></v-img>
         </v-col>
         <v-col sm="6" cols="12" class="order-sm-first">
@@ -78,7 +73,7 @@
       <v-row no-gutters>
         <v-col sm="6" cols="12">
           <v-img
-            src="./images/desktop/image-stand-out.jpg"
+            v-bind:src="`./images/${viewMode}/image-stand-out.jpg`"
           ></v-img>
         </v-col>
         <v-col sm="6" cols="12">
@@ -101,7 +96,7 @@
         <v-col sm="6" cols="12">
           <v-card>
             <v-img
-              src="./images/desktop/image-graphic-design.jpg"
+              v-bind:src="`./images/${viewMode}/image-graphic-design.jpg`"
             >
               <v-col class="d-flex h-100 justify-center align-end text-center">
                 <v-col cols="7" class="graphic-design-text">
@@ -115,7 +110,7 @@
         <v-col sm="6" cols="12">
           <v-card>
             <v-img
-              src="./images/desktop/image-photography.jpg"
+              v-bind:src="`./images/${viewMode}/image-photography.jpg`"
             >
               <v-col class="d-flex h-100 justify-center align-end text-center">
                 <v-col cols="7" class="photography-text">
@@ -133,7 +128,7 @@
           <h4>CLIENT TESTIMONIALS</h4>
         </v-col>
 
-        <v-col sm="3" cols="12">
+        <v-col sm="3" cols="7">
           <v-avatar
             size="64px"
           >
@@ -148,7 +143,7 @@
           <small>Marketing Director</small>
         </v-col>
 
-        <v-col sm="3" cols="12">
+        <v-col sm="3" cols="7">
           <v-avatar
             size="64px"
           >
@@ -163,7 +158,7 @@
           <small>Chief Operating Officer</small>
         </v-col>
 
-        <v-col sm="3" cols="12">
+        <v-col sm="3" cols="7">
           <v-avatar
             size="64px"
           >
@@ -263,9 +258,29 @@ export default {
         'instagram',
         'twitter-retweet',
         'pinterest'
-      ]
+      ],
+      width: 0,
+      menu: false,
     }
   },
+
+  mounted() {
+    this.onResize();
+    window.addEventListener('resize', this.onResize);
+  },
+
+  computed: {
+    viewMode() {
+      return this.width <= 599 ? 'mobile' : 'desktop'
+    },
+  },
+
+  methods: {
+    onResize() {
+      this.width = window.innerWidth;
+    },
+  },
+
 }
 </script>
 
@@ -281,6 +296,21 @@ html {
 
 v-toolbar {
   font-family: 'Barlow';
+
+  .v-list-item {
+    &.hamburger-menu {
+      &.desktop {
+        display: none;
+      }
+    }
+
+    &.actions-menu {
+      &.mobile {
+        display: none;
+      }
+    }
+
+  }
 
   .v-list-item-title {
     &.contact {
@@ -311,7 +341,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   letter-spacing: 0.6rem;
 }
 
