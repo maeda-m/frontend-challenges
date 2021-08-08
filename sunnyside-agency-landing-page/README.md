@@ -19,7 +19,7 @@ Users should be able to:
 
 ### Links
 
-- TODO
+- https://sunnyside-agency-landing-page-blue.vercel.app/
 
 ## My process
 
@@ -54,10 +54,11 @@ npm run lint
 - Material Design ブレークポイントを style-guide.md の内容に変更しようとしたが諦めた
   - `createVuetify` にて `display.thresholds` を渡して JS は変更された
   - `plugin/vuetify.js` にて1行目に `$grid-breakpoints` を上書きする scss を import したが CSS は変更されなかった
+- Vuetify3 のメニューやツールバーコンポーネントを利用したかったが、開発中のようなので諦めた
 
 ### Continued development
 
-- TODO
+- [Composition API](https://v3.ja.vuejs.org/guide/composition-api-introduction.html)
 
 ### Useful resources
 
