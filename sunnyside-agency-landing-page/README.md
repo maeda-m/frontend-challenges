@@ -43,6 +43,9 @@ npm run lint
   - without ESLint
   - without TypeScript
   - without JavaScript Test
+  - with SVG loader
+    - https://github.com/jpkleemans/vite-svg-loader
+      - https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-script-setup.md
 - Material Design Framework
   - [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify)
 
