@@ -19,7 +19,7 @@ Users should be able to:
 
 ### Links
 
-- TODO
+- https://sunnyside-agency-landing-page-blue.vercel.app/
 
 ## My process
 
@@ -40,23 +40,32 @@ npm run lint
 ### Built with
 
 - Vue3 + Vite
-  - with ESLint
+  - without ESLint
   - without TypeScript
   - without JavaScript Test
+  - with SVG loader
+    - https://github.com/jpkleemans/vite-svg-loader
+      - https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-script-setup.md
 - Material Design Framework
   - [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify)
 
 ### What I learned(in Japanese)
 
-- TODO
+- Material Design ブレークポイントを style-guide.md の内容に変更しようとしたが諦めた
+  - `createVuetify` にて `display.thresholds` を渡して JS は変更された
+  - `plugin/vuetify.js` にて1行目に `$grid-breakpoints` を上書きする scss を import したが CSS は変更されなかった
+- Vuetify3 のメニューやツールバーコンポーネントを利用したかったが、開発中のようなので諦めた
 
 ### Continued development
 
-- TODO
+- [Composition API](https://v3.ja.vuejs.org/guide/composition-api-introduction.html)
 
 ### Useful resources
 
-- TODO
+- https://www.atlassian.com/ja/git/tutorials/merging-vs-rebasing
+- https://next.vuetifyjs.com/ja/components/cards/
+- https://next.vuetifyjs.com/ja/components/app-bars/
+- https://next.vuetifyjs.com/ja/components/avatars/
 
 ## Author
 
