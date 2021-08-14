@@ -29,15 +29,28 @@ Users should be able to:
 
 ### Developing
 
-TODO
+1. Docker run
+```
+docker-compose up -d
+```
+2. Running dev server
+```
+docker-compose exec rails bash
+bin/vite dev
+```
 
 ### Built with
 
-- TODO
+- Backend
+  - Rails for API-only
+- Frontend
+  - Vite Ruby + Vue3
 
 ### What I learned(in Japanese)
 
-- TODO
+- Vite Ruby のホットリロードがうまくいかない
+  - タイムゾーンを合わせたりしたが、template 内の text 変更は即時反映はされない
+  - WebSocket の通信は接続までできている（ `[vite] connected.` ）
 
 ### Continued development
 
@@ -46,7 +59,8 @@ TODO
 
 ### Useful resources
 
-- TODO
+- https://guides.rubyonrails.org/api_app.html
+- https://vite-ruby.netlify.app/
 
 ## Author
 
