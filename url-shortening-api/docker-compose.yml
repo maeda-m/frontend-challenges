@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  rails:
+    restart: "no"
+    image: rails:1-0
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/opt/rails
+      - ruby30:/usr/local/bundle
+      - histfile:/histfile
+    environment:
+      - HISTFILE=/histfile/.bash_history
+      - RAILS_LOG_TO_STDOUT=true
+      - RAILS_SERVE_STATIC_FILES=true
+      - DATABASE_API=${DATABASE_API:-postgres://postgres@postgres13:5432/url_shortening_db}
+    ports:
+      - "${RAILS_PORT:-3000}:3000"
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        RUBY_VERSION: "3.0.2"
+    depends_on:
+      - postgres13
+
+  postgres13:
+    restart: "no"
+    image: postgres:13.4
+    volumes:
+      - postgres13:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --locale=C
+
+volumes:
+  ruby30:
+  postgres13:
+  histfile:
