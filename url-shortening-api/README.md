@@ -48,7 +48,7 @@ bin/vite dev
 
 ### What I learned(in Japanese)
 
-- Vite Ruby のホットリロードがうまくいかない
+- ~~Vite Ruby のホットリロードがうまくいかない（ [ポーリング設定を追加することで解決した](https://github.com/vitejs/vite/issues/1153) ）~~
   - タイムゾーンを合わせたりしたが、template 内の text 変更は即時反映はされない
   - WebSocket の通信は接続までできている（ `[vite] connected.` ）
 

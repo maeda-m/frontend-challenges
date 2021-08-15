@@ -12,5 +12,11 @@ export default defineConfig({
       'config/routes.rb',
       'app/views/**/*',
     ])
-  ]
+  ],
+  // See: https://github.com/vitejs/vite/issues/1153
+  server: {
+    watch: {
+      usePolling: true
+    }
+  },
 })
