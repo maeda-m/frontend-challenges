@@ -5,7 +5,9 @@
     "sass": "^1.37.5",
     "vite": "^2.4.4",
     "vite-plugin-full-reload": "^0.2.2",
-    "vite-plugin-ruby": "^2.0.5"
+    "vite-plugin-ruby": "^2.0.5",
+    "vite-plugin-windicss": "^1.2.7",
+    "windicss": "^3.1.7"
   },
   "dependencies": {
     "vue": "^3.2.2"

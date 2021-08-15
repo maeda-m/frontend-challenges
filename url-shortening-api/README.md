@@ -45,6 +45,7 @@ bin/vite dev
   - Rails for API-only
 - Frontend
   - Vite Ruby + Vue3
+  - Windi CSS
 
 ### What I learned(in Japanese)
 
@@ -61,6 +62,8 @@ bin/vite dev
 
 - https://guides.rubyonrails.org/api_app.html
 - https://vite-ruby.netlify.app/
+- https://windicss.org/integrations/vite.html
+- https://github.com/ElMassimo/pingcrm-vite
 
 ## Author
 
