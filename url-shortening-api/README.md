@@ -46,6 +46,8 @@ bin/vite dev
 - Frontend
   - Vite Ruby + Vue3
   - Windi CSS
+  - Font Awesome
+    - `Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)`
 
 ### What I learned(in Japanese)
 
@@ -64,6 +66,7 @@ bin/vite dev
 - https://vite-ruby.netlify.app/
 - https://windicss.org/integrations/vite.html
 - https://github.com/ElMassimo/pingcrm-vite
+- https://github.com/FortAwesome/vue-fontawesome/issues/230
 
 ## Author
 
