@@ -1,71 +1,21 @@
 <template>
-Features
-Pricing
-Resources
-
-Login
-Sign Up
-
-More than just shorter links
-
-Build your brand’s recognition and get detailed insights 
-on how your links are performing.
-
-Get Started
-
-Shorten a link here...
-
-Shorten It!
-
-Advanced Statistics
-
-Track how your links are performing across the web with our 
-advanced statistics dashboard.
-
-Brand Recognition
-
-Boost your brand recognition with each click. Generic links don’t 
-mean a thing. Branded links help instil confidence in your content.
-
-Detailed Records
-
-Gain insights into who is clicking your links. Knowing when and where 
-people engage with your content helps inform better decisions.
-
-Fully Customizable
-
-Improve brand awareness and content discoverability through customizable 
-links, supercharging audience engagement.
-
-Boost your links today
-
-Get Started
-
-Features
-
-Link Shortening
-Branded Links
-Analytics
-
-Resources
-
-Blog
-Developers
-Support
-
-Company
-
-About
-Our Team
-Careers
-Contact
+  <header-section></header-section>
+  <main-section></main-section>
+  <footer-section></footer-section>
 </template>
 
 <script>
+import HeaderSection from './components/HeaderSection.vue'
+import MainSection from './components/MainSection.vue'
+import FooterSection from './components/FooterSection.vue'
+
 export default {
   name: 'App',
 
   components: {
+    HeaderSection,
+    MainSection,
+    FooterSection
   },
 
   setup(props, context) {
@@ -76,12 +26,75 @@ export default {
 </script>
 
 <style lang="scss">
-footer {
-  font-size: 11px;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 
-  a {
-    color: hsl(228, 45%, 44%);
+body {
+  font-family: Poppins !important;
+  font-size: 18px;
+  @apply text-black;
+}
+
+.btn-primary {
+  @apply text-white;
+  @apply bg-cyan-100;
+  @apply rounded-full px-4 py-2;
+
+  &:hover {
+    @apply bg-cyan-50;
   }
+  &[type=submit] {
+    @apply rounded;
+  }
+}
+
+.btn-copied {
+  @apply bg-violet-100;
+  @apply pointer-events-none;
+}
+
+p {
+  @apply text-gray-100;
+}
+
+header {
+  a {
+    @apply text-violet-50;
+
+    &:hover {
+      @apply text-violet-200;
+    }
+  }
+}
+
+main {
+  small {
+    @apply text-violet-50;
+  }
+}
+
+footer {
+  strong {
+    @apply text-white;
+  }
+
+  .features, .resources, .company {
+    a {
+      @apply text-violet-50;
+
+      &:hover {
+        @apply text-cyan-400;
+      }
+    }
+  }
+
+  .fa {
+    @apply text-white;
+
+    &:hover {
+      @apply text-cyan-200;
+    }
+  }
+
+  @apply bg-violet-200;
 }
 </style>

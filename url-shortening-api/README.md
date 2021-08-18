@@ -65,6 +65,7 @@ bin/vite dev
 - https://guides.rubyonrails.org/api_app.html
 - https://vite-ruby.netlify.app/
 - https://windicss.org/integrations/vite.html
+  - https://tailwindcss.com/docs
 - https://github.com/ElMassimo/pingcrm-vite
 - https://github.com/FortAwesome/vue-fontawesome/issues/230
 
