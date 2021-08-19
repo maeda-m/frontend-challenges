@@ -1,6 +1,7 @@
 <template>
   <footer>
     <h1>
+      <SvgLogo fill="white" />
     </h1>
 
     <nav>
@@ -39,6 +40,10 @@
     </nav>
   </footer>
 </template>
+
+<script setup>
+import SvgLogo from '@/images/logo.svg.vue'
+</script>
 
 <script>
 export default {

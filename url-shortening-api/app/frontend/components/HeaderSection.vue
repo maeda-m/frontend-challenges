@@ -1,6 +1,7 @@
 <template>
   <header>
     <h1>
+      <SvgLogo />
     </h1>
     <nav>
       <ul>
@@ -15,6 +16,10 @@
   </header>
   <!-- TODO hamburger -->
 </template>
+
+<script setup>
+import SvgLogo from '@/images/logo.svg.vue'
+</script>
 
 <script>
 export default {

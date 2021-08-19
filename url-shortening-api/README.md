@@ -45,6 +45,7 @@ bin/vite dev
   - Rails for API-only
 - Frontend
   - Vite Ruby + Vue3
+    - without vite-svg-loader
   - Windi CSS
   - Font Awesome
     - `Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)`

@@ -6,8 +6,9 @@
 
       <button class="btn-primary">Get Started</button>
 
-      <figure>
-      </figure>
+      <div>
+        <IllustrationWorking />
+      </div>
     </section>
 
     <section class="bg-gray-50">
@@ -28,16 +29,25 @@
 
         <article>
           <article>
+            <div class="ellipse-icon">
+              <IconBrandRecognition />
+            </div>
             <h4>Brand Recognition</h4>
             <p>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
           </article>
 
           <article>
+            <div class="ellipse-icon">
+              <IconDetailedRecords />
+            </div>
             <h4>Detailed Records</h4>
             <p>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
           </article>
 
           <article>
+            <div class="ellipse-icon">
+              <IconFullyCustomizable />
+            </div>
             <h4>Fully Customizable</h4>
             <p>Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>
           </article>
@@ -51,6 +61,13 @@
     </section>
   </main>
 </template>
+
+<script setup>
+import IconBrandRecognition from '@/images/icon-brand-recognition.svg.vue'
+import IconDetailedRecords from '@/images/icon-detailed-records.svg.vue'
+import IconFullyCustomizable from '@/images/icon-fully-customizable.svg.vue'
+import IllustrationWorking from '@/images/illustration-working.svg.vue'
+</script>
 
 <script>
 export default {
