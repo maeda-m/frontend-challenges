@@ -34,13 +34,19 @@ body {
   @apply text-black;
 }
 
-.container {
-  @apply px-6 py-10 md:mx-auto;
+#app {
+  @apply pt-10;
+}
+
+.content {
+  @apply md:mx-auto;
+  @apply max-w-screen-lg;
 }
 
 .btn-primary {
-  @apply text-white bg-cyan-100;
-  @apply rounded-full px-9 py-3;
+  @apply bg-cyan-100 text-white;
+  @apply rounded-full;
+  @apply px-9 py-3;
 
   &:hover {
     @apply bg-cyan-50;
@@ -58,5 +64,9 @@ body {
 
 p {
   @apply text-gray-100;
+}
+
+.fa {
+  @apply w-6;
 }
 </style>

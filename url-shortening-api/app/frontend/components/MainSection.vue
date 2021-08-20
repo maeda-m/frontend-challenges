@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="flex flex-shrink">
+    <section class="content flex flex-shrink">
       <div>
         <h2>More than just shorter links</h2>
         <small>Build your brand’s recognition and get detailed insights on how your links are performing.</small>
@@ -15,8 +15,8 @@
       </div>
     </section>
 
-    <section class="bg-gray-50">
-      <section class="shorten">
+    <section class="bg-gray-50 mt-32">
+      <section class="content shorten">
         <form action="#">
           <div class="flex">
             <input type="text" placeholder="Shorten a link here...">
@@ -29,7 +29,7 @@
         </article>
       </section>
 
-      <section>
+      <section class="content">
         <div class="subtitle">
           <h3>Advanced Statistics</h3>
           <small>
@@ -38,7 +38,7 @@
           </small>
         </div>
 
-        <div class="flex articles">
+        <div class="articles">
           <div>
             <IconBrandRecognition />
             <article>
@@ -114,6 +114,11 @@ main {
     @apply text-2xl;
   }
 
+  p {
+    @apply pt-4;
+    @apply text-sm;
+  }
+
   small {
     @apply text-xl text-violet-50;
   }
@@ -123,7 +128,8 @@ main {
 
     input[type=text] {
       @apply flex-grow;
-      @apply px-4 py-2 rounded;
+      @apply px-4 py-2;
+      @apply rounded;
     }
 
     button[type=submit] {
@@ -135,6 +141,8 @@ main {
     @apply px-14;
     @apply rounded-lg;
     @apply bg-violet-100;
+    @apply relative;
+    top: -70px;
 
     @apply object-cover;
     background-image: url("@/images/bg-shorten-desktop.svg");
@@ -149,6 +157,8 @@ main {
   }
 
   .articles {
+    @apply flex;
+
     figure {
       @apply relative;
       top: 32px;
@@ -166,6 +176,7 @@ main {
 
     article {
       @apply bg-white;
+      @apply rounded-lg;
       @apply px-8 pt-16 pb-8;
     }
 
@@ -186,8 +197,8 @@ main {
   }
 
   .boost {
-    @apply text-center py-12;
-    @apply text-white bg-violet-100;
+    @apply py-12;
+    @apply bg-violet-100 text-white text-center;
 
     @apply object-cover;
     background-image: url("@/images/bg-boost-desktop.svg");

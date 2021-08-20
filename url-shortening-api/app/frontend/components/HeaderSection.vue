@@ -1,5 +1,5 @@
 <template>
-  <header class="flex justify-between">
+  <header class="content flex justify-between">
     <h1>
       <SvgLogo />
     </h1>
