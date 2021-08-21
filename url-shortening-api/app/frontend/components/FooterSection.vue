@@ -1,11 +1,11 @@
 <template>
-  <footer class="">
-    <div class="content flex justify-between">
+  <footer>
+    <div class="content">
       <h1>
         <SvgLogo fill="white" />
       </h1>
 
-      <nav class="flex">
+      <nav>
         <ul class="features">
           <li><strong>Features</strong></li>
           <li><a href="#">Link Shortening</a></li>
@@ -54,28 +54,38 @@ export default {
 
 <style lang="scss">
 footer {
+  @apply pb-24;
   @apply bg-violet-200;
 
   h1, nav {
-    @apply mx-8 mt-16 mb-24;
+    @apply mt-16;
   }
 
-  .features, .resources, .company, .sns {
-    @apply px-8;
+  div {
+    @apply flex;
 
-    li {
-      &:first-child {
-      @apply mb-4;
-    }
-      @apply my-2;
-    }
-  }
+    nav {
+      @apply flex;
 
-  strong {
-    @apply text-white;
+      ul {
+        @apply px-8;
+
+        li {
+          @apply my-2;
+
+          &:first-child {
+            @apply mb-4;
+          }
+        }
+      }
+    }
   }
 
   .features, .resources, .company {
+    strong {
+      @apply text-white;
+    }
+
     a {
       @apply text-violet-50;
 
@@ -97,6 +107,39 @@ footer {
 
       &:hover {
         @apply text-cyan-200;
+      }
+    }
+  }
+
+  @screen <lg {
+    h1, nav {
+      @apply mx-auto;
+    }
+
+    div {
+      @apply flex-col;
+
+      nav {
+        @apply flex-col;
+
+        ul {
+          @apply pt-4 text-center;
+        }
+      }
+    }
+  }
+
+  @screen lg {
+    h1, nav {
+      @apply mx-8;
+    }
+
+    div {
+      @apply justify-between;
+
+      nav {
+        ul {
+        }
       }
     }
   }

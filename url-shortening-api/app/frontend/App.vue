@@ -30,8 +30,7 @@ export default {
 
 body {
   font-family: Poppins !important;
-  font-size: 18px;
-  @apply text-black;
+  @apply text-lg text-black;
 }
 
 #app {
@@ -39,8 +38,15 @@ body {
 }
 
 .content {
-  @apply md:mx-auto;
   @apply max-w-screen-lg;
+
+  @screen <lg {
+    @apply mx-16;
+  }
+
+  @screen lg {
+    @apply mx-auto;
+  }
 }
 
 .btn-primary {

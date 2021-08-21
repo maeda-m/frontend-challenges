@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="content flex flex-shrink">
+    <section class="content main-title">
       <div>
         <h2>More than just shorter links</h2>
         <small>Build your brand’s recognition and get detailed insights on how your links are performing.</small>
@@ -11,14 +11,14 @@
       </div>
 
       <div>
-        <img src="@/images/illustration-working.svg" class="object-contain">
+        <img src="@/images/illustration-working.svg">
       </div>
     </section>
 
-    <section class="bg-gray-50 mt-32">
+    <section class="home">
       <section class="content shorten">
         <form action="#">
-          <div class="flex">
+          <div class="form-group">
             <input type="text" placeholder="Shorten a link here...">
             <button type="submit" class="btn-primary">Shorten It!</button>
           </div>
@@ -30,7 +30,7 @@
       </section>
 
       <section class="content">
-        <div class="subtitle">
+        <div class="sub-title">
           <h3>Advanced Statistics</h3>
           <small>
             Track how your links are performing across the web with<br>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="articles">
-          <div>
+          <div class="brand-recognition">
             <IconBrandRecognition />
             <article>
               <h4>Brand Recognition</h4>
@@ -47,19 +47,17 @@
             </article>
           </div>
 
-          <div class="line"></div>
-
-          <div>
+          <div class="h-line"></div>
+          <div class="detailed-records">
             <IconDetailedRecords />
             <article>
               <h4>Detailed Records</h4>
               <p>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
             </article>
           </div>
+          <div class="h-line"></div>
 
-          <div class="line"></div>
-
-          <div>
+          <div class="fully-customizable">
             <IconFullyCustomizable />
             <article>
               <h4>Fully Customizable</h4>
@@ -120,25 +118,31 @@ main {
   }
 
   small {
-    @apply text-xl text-violet-50;
+    @apply text-violet-50;
   }
 
-  form {
-    @apply my-16 py-10;
+  .main-title {
+    @apply flex flex-shrink;
 
-    input[type=text] {
-      @apply flex-grow;
-      @apply px-4 py-2;
-      @apply rounded;
+    small {
+      @apply text-xl;
     }
 
-    button[type=submit] {
-      @apply px-8 py-4 ml-8;
+    @screen <lg {
+      @apply flex-col-reverse text-center;
     }
+
+    img {
+      @apply object-contain;
+    }
+  }
+
+  .home {
+    @apply mt-32 pb-24;
+    @apply bg-gray-50;
   }
 
   .shorten {
-    @apply px-14;
     @apply rounded-lg;
     @apply bg-violet-100;
     @apply relative;
@@ -146,9 +150,42 @@ main {
 
     @apply object-cover;
     background-image: url("@/images/bg-shorten-desktop.svg");
+
+    form {
+      .form-group {
+        @apply flex;
+
+        input[type=text] {
+          @apply px-4;
+          @apply flex-grow;
+          @apply rounded;
+        }
+
+        input[type=text], button[type=submit] {
+          @apply h-12 m-2;
+        }
+      }
+    }
+
+    @screen <lg {
+      form {
+        @apply text-center;
+        @apply h-36 px-4 py-2;
+
+        .form-group {
+          @apply flex-col;
+        }
+      }
+    }
+
+    @screen lg {
+      form {
+        @apply p-10;
+      }
+    }
   }
 
-  .subtitle {
+  .sub-title {
     @apply text-center;
 
     small {
@@ -159,15 +196,45 @@ main {
   .articles {
     @apply flex;
 
+    @screen <lg {
+      @apply flex-col;
+
+      .detailed-records {
+        &:before {
+          @extend .v-line;
+        }
+        &:after {
+          @extend .v-line;
+        }
+      }
+    }
+
+    @screen lg {
+      .detailed-records {
+        @apply mt-12;
+      }
+
+      .fully-customizable {
+        @apply pt-24;
+      }
+    }
+
     figure {
+      @apply bg-violet-100;
+      @apply rounded-full;
+
       @apply relative;
-      top: 32px;
-      left: 32px;
+      @apply top-10;
       width: 80px;
       height: 80px;
 
-      @apply bg-violet-100;
-      @apply rounded-full;
+      @screen <lg {
+        @apply mx-auto;
+      }
+
+      @screen lg {
+        @apply ml-8;
+      }
 
       svg {
         @apply mx-auto;
@@ -177,23 +244,36 @@ main {
     article {
       @apply bg-white;
       @apply rounded-lg;
-      @apply px-8 pt-16 pb-8;
-    }
+      @apply px-8 py-16;
 
-    div:nth-child(3) {
-      @apply mt-12;
-    }
-    div:nth-child(5) {
-      @apply pt-24;
-    }
-    div.line {
-      @apply relative;
-      top: 216px;
-      width: 72px;
-      height: 9px;
+      @screen <lg {
+        @apply text-center;
+      }
 
-      @apply bg-cyan-100;
+      @screen lg {
+        @apply h-60;
+      }
     }
+  }
+
+  .h-line {
+    @apply bg-cyan-100;
+    @apply relative top-55;
+    @apply w-16 h-2;
+
+    @apply <lg:hidden;
+  }
+
+  .v-line {
+    @apply bg-cyan-100;
+    @apply absolute;
+    @apply w-2;
+
+    content: "";
+    left: 49%;
+    height: 80px;
+
+    @apply lg:hidden;
   }
 
   .boost {

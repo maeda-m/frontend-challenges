@@ -1,6 +1,6 @@
 # Frontend Mentor - Shortly URL shortening API Challenge solution
 
-This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Overview
 
@@ -69,6 +69,7 @@ bin/vite dev
   - https://tailwindcss.com/docs
 - https://github.com/ElMassimo/pingcrm-vite
 - https://github.com/FortAwesome/vue-fontawesome/issues/230
+- https://coliss.com/articles/build-websites/operation/css/flexbox-cheat-sheets.html
 
 ## Author
 
