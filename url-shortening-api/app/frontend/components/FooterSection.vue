@@ -40,18 +40,6 @@
 import SvgLogo from '@/images/logo.svg.vue'
 </script>
 
-<script>
-export default {
-  components: {
-  },
-
-  setup(props, context) {
-    return {
-    }
-  },
-}
-</script>
-
 <style lang="scss">
 footer {
   @apply pb-24;

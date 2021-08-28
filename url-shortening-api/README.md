@@ -60,6 +60,10 @@ bin/vite dev
 
 - ES Modules
   - https://github.com/rails/importmap-rails/
+- Visual Regression Test with Storybook
+  - https://storybook.js.org/blog/storybook-for-vite/
+- E2E Test with Playwright
+  - https://github.com/YusukeIwaki/capybara-playwright-driver
 
 ### Useful resources
 
@@ -70,6 +74,10 @@ bin/vite dev
 - https://github.com/ElMassimo/pingcrm-vite
 - https://github.com/FortAwesome/vue-fontawesome/issues/230
 - https://coliss.com/articles/build-websites/operation/css/flexbox-cheat-sheets.html
+- https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch
+- https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
+- https://developer.mozilla.org/ja/docs/Web/API/Window/sessionStorage
+- https://docs.github.com/ja/developers/apps/building-oauth-apps/authorizing-oauth-apps
 
 ## Author
 

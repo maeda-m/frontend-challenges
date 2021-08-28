@@ -19,11 +19,9 @@
   </header>
 </template>
 
-<script setup>
-import SvgLogo from '@/images/logo.svg.vue'
-</script>
-
 <script>
+import SvgLogo from '@/images/logo.svg.vue'
+
 export default {
   props: {
     isShownNavi: {
@@ -33,6 +31,7 @@ export default {
   },
 
   components: {
+    SvgLogo,
   },
 
   setup(props, context) {

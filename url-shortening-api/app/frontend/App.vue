@@ -1,13 +1,17 @@
 <template>
   <header-section></header-section>
-  <main-section></main-section>
+  <main-section v-bind:records="links"></main-section>
   <footer-section></footer-section>
 </template>
 
 <script>
-import HeaderSection from './components/HeaderSection.vue'
-import MainSection from './components/MainSection.vue'
-import FooterSection from './components/FooterSection.vue'
+import { onMounted, ref, toRef, reactive } from 'vue'
+
+import useFetchAPI from '@/composables/useFetchAPI.js'
+
+import HeaderSection from '@/components/HeaderSection.vue'
+import MainSection from '@/components/MainSection.vue'
+import FooterSection from '@/components/FooterSection.vue'
 
 export default {
   name: 'App',
@@ -19,7 +23,40 @@ export default {
   },
 
   setup(props, context) {
+    const links = ref([])
+    const { fetchAPI } = useFetchAPI()
+
+    onMounted(() => {
+      const tokenRequest = new Request('/login/device/token.json', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-current-user-token': sessionStorage.token
+        },
+      })
+
+      fetchAPI(tokenRequest, (response) => {
+        sessionStorage.token = response.token
+
+        const urlsRequest = new Request('/shortened_urls.json', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-current-user-token': sessionStorage.token
+          },
+        })
+        fetchAPI(urlsRequest, (records) => {
+          records.forEach(function(record, i) {
+            links.value.push(record)
+          })
+        })
+      }, (e) => {
+        alert('Initialization failed. Reload this page after a while.')
+      })
+    })
+
     return {
+      links
     }
   },
 }
@@ -61,11 +98,6 @@ body {
   &[type=submit] {
     @apply rounded;
   }
-}
-
-.btn-copied {
-  @apply bg-violet-100;
-  @apply pointer-events-none;
 }
 
 p {

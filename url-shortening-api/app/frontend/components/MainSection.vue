@@ -16,16 +16,21 @@
     </section>
 
     <section class="home">
-      <section class="content shorten">
-        <form action="#">
-          <div class="form-group">
-            <input type="text" placeholder="Shorten a link here...">
-            <button type="submit" class="btn-primary">Shorten It!</button>
-          </div>
-        </form>
+      <section class="content">
+        <div class="shorten">
+          <form action="#" v-on:submit.prevent="requestShortenedLink">
+            <div class="form-group">
+              <span class="input-group" v-bind:class="{ 'has-error': !!error.message }">
+                <input type="text" ref="element" placeholder="Shorten a link here..." autofocus="autofocus" v-model="url">
+                <div class="message" v-bind:class="{ 'empty': !error.message }" v-text="error.message"></div>
+              </span>
+              <button type="submit" class="btn-primary">Shorten It!</button>
+            </div>
+          </form>
+        </div>
 
-        <article>
-          <!-- TODO -->
+        <article class="records">
+          <shorten-record v-bind="record" v-for="(record, i) in records" v-bind:key="i" />
         </article>
       </section>
 
@@ -77,16 +82,66 @@
   </main>
 </template>
 
-<script setup>
+<script>
+import { ref, toRef, reactive } from 'vue'
+
+import useFetchAPI from '@/composables/useFetchAPI.js'
+
+import ShortenRecord from '@/components/ShortenRecord.vue'
 import IconBrandRecognition from '@/images/icon-brand-recognition.svg.vue'
 import IconDetailedRecords from '@/images/icon-detailed-records.svg.vue'
 import IconFullyCustomizable from '@/images/icon-fully-customizable.svg.vue'
-</script>
 
-<script>
 export default {
+  props: {
+    records: {
+      type: Array,
+      default: [],
+    }
+  },
+  components: {
+    ShortenRecord,
+    IconBrandRecognition,
+    IconDetailedRecords,
+    IconFullyCustomizable,
+  },
   setup(props, context) {
+    const url = ref('')
+    const error = reactive({ message: '' })
+    const element = ref(null)
+    const records = toRef(props, 'records')
+
+    const { fetchAPI } = useFetchAPI()
+
+    const renderErrorMessage = (msg) => {
+      error.message = msg
+    }
+    const requestShortenedLink = () => {
+      const data = { url: url.value }
+
+      const urlsRequest = new Request('/shortened_urls.json', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-current-user-token': sessionStorage.token
+        },
+        body: JSON.stringify(data),
+      })
+      fetchAPI(urlsRequest, (record) => {
+        renderErrorMessage('')
+        records.value.push(record)
+        url.value = ''
+        element.value.focus()
+      }, (e) => {
+        renderErrorMessage('Please add a link')
+      })
+    }
+
     return {
+      url,
+      error,
+      element,
+      requestShortenedLink,
     }
   },
 }
@@ -142,11 +197,15 @@ main {
     @apply bg-gray-50;
   }
 
+  .pop-out {
+    @apply relative;
+    top: -70px;
+  }
+
   .shorten {
     @apply rounded-lg;
     @apply bg-violet-100;
-    @apply relative;
-    top: -70px;
+    @extend .pop-out;
 
     @apply object-cover;
     background-image: url("@/images/bg-shorten-desktop.svg");
@@ -155,14 +214,27 @@ main {
       .form-group {
         @apply flex;
 
+        .input-group {
+          @apply flex-grow;
+
+          .message {
+            @apply text-sm italic;
+            @apply text-red text-left;
+
+            &.empty {
+              @apply h-5;
+            }
+          }
+        }
+
         input[type=text] {
           @apply px-4;
-          @apply flex-grow;
           @apply rounded;
+          width: 97%;
         }
 
         input[type=text], button[type=submit] {
-          @apply h-12 m-2;
+          @apply h-12;
         }
       }
     }
@@ -170,19 +242,27 @@ main {
     @screen <lg {
       form {
         @apply text-center;
-        @apply h-36 px-4 py-2;
+        @apply h-36 px-4 py-3;
 
         .form-group {
           @apply flex-col;
+
+          input[type=text] {
+            @apply w-full;
+          }
         }
       }
     }
 
     @screen lg {
       form {
-        @apply p-10;
+        @apply px-10 pt-10 pb-5;
       }
     }
+  }
+
+  .records {
+    @extend .pop-out;
   }
 
   .sub-title {
