@@ -44,3 +44,10 @@ gem 'vite_rails'
 
 # Token
 gem 'jwt'
+
+# Shortener
+gem 'shortener'
+gem 'validate_url'
+
+# Decorator
+gem 'draper'

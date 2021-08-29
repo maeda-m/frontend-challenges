@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get '/login/device/token', to: 'tokens#device'
 
+  resources :shortened_urls, param: :code, only: [ :index, :create, :show ]
 end

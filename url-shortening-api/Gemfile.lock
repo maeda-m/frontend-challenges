@@ -44,6 +44,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (6.1.4)
       activesupport (= 6.1.4)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (6.1.4)
       activemodel (= 6.1.4)
       activesupport (= 6.1.4)
@@ -84,6 +88,13 @@ GEM
     cucumber-messages (12.4.0)
       protobuf-cucumber (~> 3.10, >= 3.10.8)
     diff-lcs (1.4.4)
+    draper (4.0.2)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
+      ruby2_keywords
     dry-cli (0.7.0)
     erubi (1.10.0)
     globalid (0.5.2)
@@ -154,6 +165,8 @@ GEM
       thor (~> 1.0)
     rake (13.0.6)
     regexp_parser (2.1.1)
+    request_store (1.5.0)
+      rack (>= 1.4)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -175,6 +188,9 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
+    ruby2_keywords (0.0.5)
+    shortener (0.8.2)
+      voight_kampff (~> 1.1.2)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -190,6 +206,9 @@ GEM
       rspec (>= 3.0, < 4.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    validate_url (1.0.13)
+      activemodel (>= 3.0.0)
+      public_suffix
     vite_rails (2.0.13)
       railties (>= 5.1, < 8)
       vite_ruby (~> 1.0)
@@ -197,6 +216,8 @@ GEM
       dry-cli (~> 0.7.0)
       rack-proxy (~> 0.6, >= 0.6.1)
       zeitwerk (~> 2.2)
+    voight_kampff (1.1.4)
+      rack (>= 1.4, < 3.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -211,6 +232,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara-playwright-driver (~> 0.1.5)
+  draper
   jwt
   pg (~> 1.1)
   playwright-ruby-client (~> 1.14)
@@ -218,9 +240,11 @@ DEPENDENCIES
   rails (~> 6.1.4)
   rspec (~> 3.10)
   rspec-rails (~> 5.0, >= 5.0.2)
+  shortener
   spring
   turnip (~> 4.0, >= 4.0.1)
   tzinfo-data
+  validate_url
   vite_rails
 
 RUBY VERSION

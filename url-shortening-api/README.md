@@ -43,6 +43,9 @@ bin/vite dev
 
 - Backend
   - Rails for API-only
+    - https://github.com/jpmcgrath/shortener
+    - https://github.com/perfectline/validates_url
+    - https://github.com/drapergem/draper
 - Frontend
   - Vite Ruby + Vue3
     - without vite-svg-loader
