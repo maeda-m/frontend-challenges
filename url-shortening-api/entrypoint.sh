@@ -10,6 +10,8 @@ npm ci
 bundle install
 rails db:create
 rails db:migrate
+
+export API_TOKEN_SECRET=${API_TOKEN_SECRET:-$(openssl rand -hex 16)}
 rails server --binding=0.0.0.0 --port=3000
 
 exec "$@"

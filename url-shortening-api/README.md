@@ -80,6 +80,9 @@ bin/vite dev
 - https://docs.github.com/ja/developers/apps/building-oauth-apps/authorizing-oauth-apps
 - https://zenn.dev/yusukeiwaki/articles/db1cd8d7aa87ed
 - https://playwright-ruby-client.vercel.app/docs/article/guides/playwright_on_alpine_linux
+- https://railsguides.jp/api_app.html
+- https://railsguides.jp/layouts_and_rendering.html
+- https://datatracker.ietf.org/doc/html/rfc7807
 
 ## Author
 

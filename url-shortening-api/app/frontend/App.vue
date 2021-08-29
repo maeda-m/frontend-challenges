@@ -31,7 +31,7 @@ export default {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'x-current-user-token': sessionStorage.token
+          'x-current-token': sessionStorage.token
         },
       })
 
@@ -42,7 +42,7 @@ export default {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'x-current-user-token': sessionStorage.token
+            'x-current-token': sessionStorage.token
           },
         })
         fetchAPI(urlsRequest, (records) => {

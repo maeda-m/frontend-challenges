@@ -123,7 +123,7 @@ export default {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-current-user-token': sessionStorage.token
+          'x-current-token': sessionStorage.token
         },
         body: JSON.stringify(data),
       })

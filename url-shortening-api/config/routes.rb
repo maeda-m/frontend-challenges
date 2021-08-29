@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   namespace :frontend do
     resources :entrypoints, only: [ :index ]
   end
+
+  get '/login/device/token', to: 'tokens#device'
+
 end
