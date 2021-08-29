@@ -49,6 +49,8 @@ bin/vite dev
   - Windi CSS
   - Font Awesome
     - `Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)`
+- E2E Test with Playwright
+  - https://github.com/YusukeIwaki/capybara-playwright-driver
 
 ### What I learned(in Japanese)
 
@@ -62,8 +64,6 @@ bin/vite dev
   - https://github.com/rails/importmap-rails/
 - Visual Regression Test with Storybook
   - https://storybook.js.org/blog/storybook-for-vite/
-- E2E Test with Playwright
-  - https://github.com/YusukeIwaki/capybara-playwright-driver
 
 ### Useful resources
 
@@ -78,6 +78,8 @@ bin/vite dev
 - https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
 - https://developer.mozilla.org/ja/docs/Web/API/Window/sessionStorage
 - https://docs.github.com/ja/developers/apps/building-oauth-apps/authorizing-oauth-apps
+- https://zenn.dev/yusukeiwaki/articles/db1cd8d7aa87ed
+- https://playwright-ruby-client.vercel.app/docs/article/guides/playwright_on_alpine_linux
 
 ## Author
 

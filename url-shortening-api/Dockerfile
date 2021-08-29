@@ -19,6 +19,9 @@ RUN set -eux; \
   ; \
   rm -rf /var/lib/apt/lists/*
 
+# See: https://github.com/microsoft/playwright
+RUN npm install playwright@1.14.0
+
 WORKDIR /opt/rails
 
 COPY entrypoint.sh /

@@ -1,0 +1,9 @@
+# See: https://playwright-ruby-client.vercel.app/docs/article/guides/playwright_on_alpine_linux#server-code
+ARG PLAYWRIGHT_VERSION
+FROM mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-focal
+
+WORKDIR /root
+RUN npm install playwright@${PLAYWRIGHT_VERSION} && ./node_modules/.bin/playwright install
+
+EXPOSE 4545
+CMD ["./node_modules/.bin/playwright", "run-server", "4545"]
