@@ -86,6 +86,7 @@ bin/vite dev
 - https://railsguides.jp/api_app.html
 - https://railsguides.jp/layouts_and_rendering.html
 - https://datatracker.ietf.org/doc/html/rfc7807
+- https://zenn.dev/imaginary/articles/6ed45b2352896f
 
 ## Author
 

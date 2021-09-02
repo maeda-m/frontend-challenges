@@ -1,18 +1,15 @@
 require 'capybara/rspec'
 require 'capybara-playwright-driver'
 
-# See: https://playwright-ruby-client.vercel.app/docs/article/guides/playwright_on_alpine_linux
-module CapybaraPlaywrightDriverPatch
-  def playwright_execution
-    @playwright_execution ||= ::Playwright.connect_to_playwright_server('ws://playwright:4545/ws')
-  end
-end
-Capybara::Playwright::Driver.prepend(CapybaraPlaywrightDriverPatch)
-
-# See: https://github.com/YusukeIwaki/capybara-playwright-driver
+# See: https://github.com/YusukeIwaki/capybara-playwright-driver/issues/43
 Capybara.register_driver(:playwright) do |app|
-  Capybara::Playwright::Driver.new(app, browser_type: :firefox, headless: true)
+  Capybara::Playwright::Driver.new(app,
+    playwright_server_endpoint_url: 'ws://playwright:4545/ws',
+    browser_type: :firefox,
+    headless: true
+  )
 end
+
 Capybara.default_max_wait_time = 5
 Capybara.default_driver = :playwright
 Capybara.save_path = 'tmp/capybara'
