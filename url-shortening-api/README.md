@@ -23,7 +23,9 @@ Users should be able to:
 
 ### Links
 
-- TODO
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+- https://url-shortening-api-challenges.herokuapp.com/
 
 ## My process
 
@@ -87,6 +89,8 @@ bin/vite dev
 - https://railsguides.jp/layouts_and_rendering.html
 - https://datatracker.ietf.org/doc/html/rfc7807
 - https://zenn.dev/imaginary/articles/6ed45b2352896f
+- https://vite-ruby.netlify.app/guide/deployment.html
+- https://devcenter.heroku.com/ja/articles/app-json-schema
 
 ## Author
 
