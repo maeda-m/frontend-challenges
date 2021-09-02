@@ -1,5 +1,5 @@
 class Token < ApplicationRecord
-  has_many :shortened_urls
+  has_many :shortened_urls, dependent: :delete_all
 
   class << self
     def hmac_secret
