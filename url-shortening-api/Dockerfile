@@ -20,7 +20,7 @@ RUN set -eux; \
   rm -rf /var/lib/apt/lists/*
 
 # See: https://github.com/microsoft/playwright
-RUN npm install playwright@1.14.0
+RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm install --global playwright@${PLAYWRIGHT_VERSION}
 
 WORKDIR /opt/rails
 
