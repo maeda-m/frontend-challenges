@@ -3,5 +3,5 @@ class ShortenedUrl < ApplicationRecord
 
   validates :url,
     presence: { message: 'Please add a link' },
-    url: { allow_blank: true }
+    url: { allow_blank: true, message: 'Not a valid URL' }
 end

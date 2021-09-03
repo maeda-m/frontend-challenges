@@ -133,7 +133,7 @@ export default {
         url.value = ''
         element.value.focus()
       }, (e) => {
-        renderErrorMessage('Please add a link')
+        renderErrorMessage(e.url.join())
       })
     }
 
