@@ -19,7 +19,7 @@ Users should be able to:
 
 | Desktop | Mobile |
 | :-----: | :----: |
-| ![Desktop](docs/assets/images/screenshot-desktop.png) | ![Mobile](docs/assets/images/screenshot-mobile.png) |
+| ![Desktop](docs/assets/images/desktop.gif) | ![Mobile](docs/assets/images/mobile.gif) |
 
 ### Links
 
