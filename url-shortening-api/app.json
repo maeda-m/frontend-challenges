@@ -1,0 +1,42 @@
+{
+  "name": "Shortly URL shortening API Challenge",
+  "env": {
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    },
+    "API_TOKEN_SECRET": {
+      "generator": "secret"
+    },
+    "RACK_ENV": {
+      "value": "production"
+    },
+    "RAILS_ENV": {
+      "value": "production"
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "value": "enabled"
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "value": "true"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "value": "false"
+    },
+    "YARN_PRODUCTION": {
+      "value": "false"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
