@@ -19,10 +19,44 @@
 
 ## アーキテクチャ全体図
 
+### 匿名利用者
+
 ```mermaid
+sequenceDiagram
+    autonumber
+
+    Browser->>Frontend Entrypoint:　
+    Frontend Entrypoint->>Token Endpoint: Fetch
+    Token Endpoint->>Browser:　
+    Note over Token Endpoint,Browser: Anonymous Access Token
+
 ```
 
-### 語彙と概要
+### 短縮URLの発行
+
+```mermaid
+sequenceDiagram
+    autonumber
+
+    Client->>Shortened API: Request
+    Note over Client,Shortened API: Long URL
+    Shortened API->>Client: Response
+    Note over Client,Shortened API: Short URL
+
+```
+
+### 短縮URLの応答
+
+```mermaid
+sequenceDiagram
+    autonumber
+
+    Client->>Shortened API: Request
+    Note over Client,Shortened API: Short URL
+    Shortened API->>Client: Response(Redirect)
+    Note over Client,Shortened API: Long URL
+
+```
 
 ## 選定した経緯
 
